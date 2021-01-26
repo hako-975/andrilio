@@ -20,6 +20,9 @@
         <!-- Andrilio CSS -->
         <link rel="stylesheet" href="<?= base_url('assets/css/andrilio.css'); ?>">
 
+        <!-- Favicon -->
+        <link rel="icon" href="<?= base_url('assets/img/img_properties/favicon.png'); ?>">
+
         <title><?= $title; ?></title>
     </head>
     <body>
