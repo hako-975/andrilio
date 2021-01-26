@@ -21,8 +21,13 @@
                       <?= form_error('password'); ?>
                     </div>
 				</div>
-				<div class="form-group text-right">
-					<button type="submit" name="btnLogin" class="btn btn-primary"><i class="fas fa-fw fa-sign-in-alt"></i> Masuk</button>
+				<div class="row">
+					<div class="col-lg text-left">
+						<a href="<?= base_url('auth/forgotPassword'); ?>">Lupa Password</a>
+					</div>
+					<div class="col-lg text-right">
+						<button type="submit" name="btnLogin" class="btn btn-primary"><i class="fas fa-fw fa-sign-in-alt"></i> Masuk</button>
+					</div>
 				</div>
 			</form>
 		</div>
