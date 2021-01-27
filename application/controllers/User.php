@@ -81,6 +81,8 @@ class User extends CI_Controller {
 
 	public function deleteUser($id)
 	{
+		$this->checkLoginAdmin();
+		
 		$this->usmo->deleteUser($id);
 	}
 }

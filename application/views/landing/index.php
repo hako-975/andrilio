@@ -77,7 +77,7 @@
 				</div>
 				<div class="row my-3">
 					<div class="col-lg">
-						<?= $ds['konten_section']; ?>
+						<?= htmlspecialchars_decode($ds['konten_section']); ?>
 					</div>
 				</div>
 			</div>
@@ -124,16 +124,16 @@
 			<div class="row my-3">
 				<div class="col-lg-4 my-2">
 					<div class="card">
-					  <div class="card-header bg-red-brown text-pink">
+					  <div class="card-header bg-red-brown">
 					    <?= $kontak['judul_kontak']; ?>
 					  </div>
-					  <ul class="list-group list-group-flush">
+					  <ul class="list-group list-group-flush text-red-brown">
 					    <li class="list-group-item">No. Telepon : <?= $kontak['no_telepon_kontak']; ?></li>
 					    <li class="list-group-item">Alamat : <?= $kontak['alamat_kontak']; ?></li>
 					  </ul>
 					</div>
 				</div>
-				<div class="col-lg my-2 bg-red-brown text-pink p-4 mx-3 rounded">
+				<div class="col-lg my-2 bg-red-brown p-4 mx-3 rounded">
 					<h4>Kirim Aku Sebuah Pesan</h4>
 					<form action="<?= base_url('landing/sendMessage'); ?>" method="post">
 						<div class="form-group">

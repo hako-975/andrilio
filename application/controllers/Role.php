@@ -75,6 +75,7 @@ class Role extends CI_Controller {
 
 	public function deleteRole($id)
 	{
+		$this->checkLoginAdmin();
 		$this->romo->deleteRole($id);
 	}
 }

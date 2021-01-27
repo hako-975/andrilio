@@ -105,13 +105,15 @@ section {
 
 section.striped:nth-of-type(even) {
 	color: #CC8177 !important;
-  	background-color: rgb(255,245,245);
+  background-color: rgb(255,245,245);
 }
 
 section.striped:nth-of-type(odd) {
 	color: #FFF5F5 !important;
-  	background-color: rgb(204,129,119);
+  background-color: rgb(204,129,119);
 }
+
+
 /*------------ section ------------*/
 
 /*------------ scrollbar ------------*/
@@ -250,3 +252,9 @@ a.nav-link:hover {
   }
 }
 /*------------ footer ------------*/
+
+/*------------ align middle table ------------*/
+table > thead > tr > th, table > tbody > tr > td  {
+  vertical-align: middle !important;
+}
+/*------------ align middle table ------------*/

@@ -26,7 +26,9 @@
 						<div class="form-group">
 							<label for="nama_role">Nama Role</label>
 							<input type="text" id="nama_role" class="form-control <?= (form_error('nama_role')) ? 'is-invalid' : ''; ?>" name="nama_role" required value="<?= set_value('nama_role'); ?>">
+							<?= form_error('nama_role', '<small class="text-danger">', '</small>'); ?>
 						</div>
+
 					  	<div class="form-group">
 					  		<button type="submit" name="btnInsertRole" class="btn btn-primary"><i class="fas fa-fw fa-save"></i> Simpan</button>
 					  	</div>

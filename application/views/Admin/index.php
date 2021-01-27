@@ -12,7 +12,7 @@
       <div class="container">
         <div class="row my-2">
           <div class="col-lg">
-            <h2>Dasbor</h2>
+            <h2><i class="fas fa-fw fa-tachometer-alt"></i> Dasbor</h2>
           </div>
         </div>
       </div>

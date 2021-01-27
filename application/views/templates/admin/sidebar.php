@@ -21,10 +21,10 @@
       <a href="<?= base_url('portfolio'); ?>"><i class="fas fa-fw fa-file-alt"></i> Portfolio</a>
     </li>
     <li>
-      <a href="#"><i class="fas fa-fw fa-puzzle-piece"></i> Section</a>
+      <a href="<?= base_url('section'); ?>"><i class="fas fa-fw fa-puzzle-piece"></i> Section</a>
     </li>
     <li>
-      <a href="#"><i class="fab fa-fw fa-facebook"></i> Sosial Media</a>
+      <a href="<?= base_url('sosialMedia'); ?>"><i class="fab fa-fw fa-facebook"></i> Sosial Media</a>
     </li>
     <li>
       <a href="#"><i class="fas fa-fw fa-phone"></i> Kontak</a>

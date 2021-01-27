@@ -10,8 +10,17 @@ class Portfolio extends CI_Controller {
 		$this->load->model('Admin_model', 'admo');
 	}
 
+	public function checkLoginAdmin()
+	{
+		if (($this->session->userdata('username') && $this->session->userdata('id_role')) == false) {
+			redirect('auth/logout');
+		}
+	}
+
 	public function index()
 	{
+		$this->checkLoginAdmin();
+		
 		$data['title'] = 'Portfolio';
 		$data['portfolio'] = $this->pomo->getPortfolio();
 		$data['dataUser'] = $this->admo->getDataUser();
