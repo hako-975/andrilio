@@ -9,16 +9,16 @@
     <li>
       <a href="<?= base_url('admin'); ?>"><i class="fas fa-fw fa-tachometer-alt"></i> Dasbor</a>
     </li>
-    <li>
-      <a href="<?= base_url('user'); ?>"><i class="fas fa-fw fa-users"></i> Pengguna</a>
-    </li>
     <?php if ($dataUser['id_role'] == '1'): ?>
       <li>
         <a href="<?= base_url('role'); ?>"><i class="fas fa-fw fa-user-tie"></i> Role</a>
       </li>
     <?php endif ?>
     <li>
-      <a href="#"><i class="fas fa-fw fa-file-alt"></i> Portfolio</a>
+      <a href="<?= base_url('user'); ?>"><i class="fas fa-fw fa-users"></i> Pengguna</a>
+    </li>
+    <li>
+      <a href="<?= base_url('portfolio'); ?>"><i class="fas fa-fw fa-file-alt"></i> Portfolio</a>
     </li>
     <li>
       <a href="#"><i class="fas fa-fw fa-puzzle-piece"></i> Section</a>

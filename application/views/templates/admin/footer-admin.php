@@ -15,6 +15,8 @@
 		<script src="<?= base_url('assets/vendor/fontawesome/js/all.min.js'); ?>"></script>
 		<script src="<?= base_url('assets/vendor/sweetalert2/sweetalert2.all.min.js'); ?>"></script>
 
+		<script src="<?= base_url('assets/js/andrilio.js'); ?>"></script>
+
 		<!-- configuration -->
 		<script src="<?= base_url('assets/js/jquery-easing-config.js'); ?>"></script>
 		<script src="<?= base_url('assets/js/jquery-mcustomscrollbar-config.js'); ?>"></script>

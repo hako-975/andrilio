@@ -1,3 +1,43 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css?family=Montserrat:600";
+@import "https://fonts.googleapis.com/css2?family=Lobster";
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background: #fafafa;
+}
+
+/*------------ Sticky Footer ------------*/
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+/*------------ Sticky Footer ------------*/
+
+/*------------ Img ------------*/
+.img-w-150 {
+	width: 150px;
+}
+
+.img-300 {
+	height: 300px;
+	width: 300px;
+}
+/*------------ Img ------------*/
+
+/*------------ header ------------*/
 .header-title {
 	margin: 5px 0;
 	text-align: center;
@@ -18,9 +58,195 @@
 		margin: 5px 0;
 		text-align: right;
 	}
-
 }
+/*------------ header ------------*/
 
 .arrow-dropdown-disabled::after {
 	display: none;
 }
+
+/*------------ color ------------*/
+.bg-pink {
+	background-color: #FFF5F5;
+}
+
+.text-pink {
+	color: #FFF5F5 !important;
+}
+
+.bg-red-brown {
+	background-color: #CC8177;
+}
+
+.text-red-brown {
+	color: #CC8177 !important;
+}
+/*------------ color ------------*/
+
+
+/*------------ heading_1 ------------*/
+.heading_1 {
+	font-family: 'Montserrat', sans-serif;
+}
+/*------------ heading_2 ------------*/
+.heading_2 {
+	font-family: 'Lobster', sans-serif;
+}
+
+.text-shadow {
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+/*------------ section ------------*/
+section {
+	min-height: 400px;
+	padding: 4rem 0;
+}
+
+section.striped:nth-of-type(even) {
+	color: #CC8177 !important;
+  	background-color: rgb(255,245,245);
+}
+
+section.striped:nth-of-type(odd) {
+	color: #FFF5F5 !important;
+  	background-color: rgb(204,129,119);
+}
+/*------------ section ------------*/
+
+/*------------ scrollbar ------------*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {     
+    background: #FFF5F5;    
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #CC8177;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #AA6055;
+}
+/*------------ scrollbar ------------*/
+
+
+/*------------ scroll to top ------------*/
+.scroll-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  text-align: center;
+  color: #fff;
+  background: rgba(90, 92, 105, 0.5);
+  line-height: 46px;
+}
+
+.scroll-to-top:focus, .scroll-to-top:hover {
+  color: white;
+}
+
+.scroll-to-top:hover {
+  background: #343a40;
+}
+
+.scroll-to-top i {
+  font-weight: 800;
+}
+/*------------ scroll to top ------------*/
+
+/*------------ textarea ------------*/
+textarea {
+	min-height: 90px;
+	max-height: 210px;
+}
+/*------------ textarea ------------*/
+
+/*------------ btn pink ------------*/
+
+.btn-pink {
+  color: #CC8177;
+  background-color: #FFF5F5;
+  border-color: #FFF5F5;
+}
+
+.btn-pink:hover {
+  color: #FFF5F5;
+  background-color: #EEA399;
+  border-color: #BB7066;
+}
+
+.btn-pink:focus, .btn-pink.focus {
+  color: #CC8177;
+  background-color: #EEA399;
+  border-color: #BB7066;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+/*------------ btn pink ------------*/
+
+/*------------ btn red brown ------------*/
+
+.btn-red-brown {
+  color: #FFF5F5;
+  background-color: #CC8177;
+  border-color: #CC8177;
+}
+
+.btn-red-brown:hover {
+  color: #FFF5F5;
+  background-color: #AA6055;
+  border-color: #CC8177;
+}
+
+.btn-red-brown:focus, .btn-red-brown.focus {
+  color: #CC8177;
+  background-color: #AA6055;
+  border-color: #CC8177;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+/*------------ btn red brown ------------*/
+
+/*------------ a nav-link hover ------------*/
+a.nav-link {
+	transition: 0.5s;
+}
+
+a.nav-link:hover {
+  padding-left: 1rem;
+  padding-right: 1rem;
+	color: #FFF5F5 !important;
+	background-color: #CC8177;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+/*------------ a nav-link hover ------------*/
+
+/*------------ footer ------------*/
+.footer-copyright {
+  margin: 5px 0;
+  text-align: left;
+}
+
+.footer-sosial-media {
+  margin: 5px 0;
+  text-align: left;
+}
+
+@media (min-width: 992px) {
+  .footer-copyright {
+    margin: 5px 0;
+    text-align: left;
+  }
+
+  .footer-sosial-media {
+    margin: 5px 0;
+    text-align: right;
+  }
+}
+/*------------ footer ------------*/

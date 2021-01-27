@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100" id="page-top">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -25,5 +25,5 @@
 
         <title><?= $title; ?></title>
     </head>
-    <body>
+    <body class="d-flex flex-column h-100">
 
