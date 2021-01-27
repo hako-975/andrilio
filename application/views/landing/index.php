@@ -124,7 +124,7 @@
 			<div class="row my-3">
 				<div class="col-lg-4 my-2">
 					<div class="card">
-					  <div class="card-header bg-red-brown">
+					  <div class="card-header bg-red-brown text-pink">
 					    <?= $kontak['judul_kontak']; ?>
 					  </div>
 					  <ul class="list-group list-group-flush text-red-brown">
@@ -133,7 +133,7 @@
 					  </ul>
 					</div>
 				</div>
-				<div class="col-lg my-2 bg-red-brown p-4 mx-3 rounded">
+				<div class="col-lg my-2 bg-red-brown p-4 mx-3 rounded text-pink">
 					<h4>Kirim Aku Sebuah Pesan</h4>
 					<form action="<?= base_url('landing/sendMessage'); ?>" method="post">
 						<div class="form-group">
