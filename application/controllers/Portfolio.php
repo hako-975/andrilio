@@ -7,8 +7,8 @@ class Portfolio extends CI_Controller {
 	{
 		$data['title'] = 'Selamat Datang';
 		
-		$this->load->view('templates/portfolio/header-portfolio', $data);
+		$this->load->view('templates/admin/header-admin', $data);
 		$this->load->view('portfolio/index', $data);
-		$this->load->view('templates/portfolio/footer-portfolio', $data);
+		$this->load->view('templates/admin/footer-admin', $data);
 	}
 }

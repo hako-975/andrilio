@@ -60,3 +60,31 @@ $(document).ready(function() {
       }
   });
 });
+
+var input3 = document.getElementById("password_lama");
+var text3 = document.getElementById("text3");
+// When the user presses any key on the keyboard, run the function
+input3.addEventListener("keyup", function(event3) {
+
+  // If "caps lock" is pressed, display the warning text
+  if (event3.getModifierState("CapsLock")) {
+    text3.style.display = "block";
+  } else {
+    text3.style.display = "none"
+  }
+});
+
+$(document).ready(function() {
+  $("#show_hide_password_lama a").on('click', function(event) {
+      event.preventDefault();
+      if($('#show_hide_password_lama input').attr("type") == "text"){
+          $('#show_hide_password_lama input').attr('type', 'password');
+          $('#icon_eye3').addClass( "fa-eye-slash" );
+          $('#icon_eye3').removeClass( "fa-eye" );
+      }else if($('#show_hide_password_lama input').attr("type") == "password"){
+          $('#show_hide_password_lama input').attr('type', 'text');
+          $('#icon_eye3').removeClass( "fa-eye-slash" );
+          $('#icon_eye3').addClass( "fa-eye" );
+      }
+  });
+});

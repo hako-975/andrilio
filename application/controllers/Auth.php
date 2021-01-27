@@ -42,7 +42,7 @@ class Auth extends CI_Controller {
 		// jika ada user
 		if ($user) {
 			// jika pengguna is_active
-			if ($user['is_active']) {
+			if ($user['is_active'] == '1') {
 				// cek password
 				if (password_verify($password, $user['password'])) {
 					// store username dan email ke session
@@ -64,7 +64,7 @@ class Auth extends CI_Controller {
 					redirect('auth');
 				}
 			} else {
-				$this->session->set_flashdata('message-failed', 'This ' . $username . ' belum di verifikasi');
+				$this->session->set_flashdata('message-failed', 'This ' . $username . ' belum di aktivasi');
 				redirect('auth');
 			}
 		} else {
@@ -148,7 +148,13 @@ class Auth extends CI_Controller {
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('email');
 		$this->session->unset_userdata('id_role');
-		$this->session->set_flashdata('message-success', 'Anda berhasil keluar');
+		if (isset($_SESSION['message-success'])) {
+			if ($_SESSION['message-success'] == 'updateProfile') {
+				$this->session->set_flashdata('message-success', 'berhasil mengubah profil');
+			}
+		} else {
+			$this->session->set_flashdata('message-success', 'Anda berhasil keluar');
+		}
 		redirect('auth');
 	}
 
