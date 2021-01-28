@@ -12,11 +12,11 @@
 		<div class="container">
 			<div class="row my-2">
 				<div class="col-lg header-title">
-					<h3><i class="fas fa-fw fa-puzzle-piece"></i> Section</h3>
+					<h3><i class="fas fa-fw fa-puzzle-piece"></i> Galeri</h3>
 				</div>
 				<?php if ($dataUser['id_role'] == '1'): ?>
 					<div class="col-lg header-button">
-						<a class="btn btn-primary" href="<?= base_url('section/insertSection'); ?>"><i class="fas fa-fw fa-plus"></i> Tambah Section</a>
+						<a class="btn btn-primary" href="<?= base_url('galeri/insertGaleri'); ?>"><i class="fas fa-fw fa-plus"></i> Tambah Galeri</a>
 					</div>
 				<?php endif ?>
 			</div>
@@ -27,22 +27,24 @@
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>Nama Section</th>
-									<th>Konten Section</th>
+									<th>Galeri</th>
 									<th>Aksi</th>
 								</tr>
 							</thead>
 							<tbody>
 								<?php $i = 1; ?>
-								<?php foreach ($section as $ds): ?>
+								<?php foreach ($galeri as $dg): ?>
 									<tr>
 										<td><?= $i++; ?></td>
-										<td><?= $ds['nama_section']; ?></td>
-										<td><?= htmlspecialchars_decode($ds['konten_section']); ?></td>
 										<td>
-											<a href="<?= base_url('section/updateSection/' . $ds['id_section']); ?>" class="btn btn-sm btn-success m-1"><i class="fas fa-fw fa-edit"></i></a>
+											<a href="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" class="enlarge">
+												<img class="img-fluid img-w-200" src="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" alt="<?= $dg['img_galeri']; ?>">
+											</a>
+										</td>
+										<td>
+											<a href="<?= base_url('galeri/updateGaleri/' . $dg['id_galeri']); ?>" class="btn btn-sm btn-success m-1"><i class="fas fa-fw fa-edit"></i></a>
 											<?php if ($dataUser['id_role'] == '1'): ?>
-												<a href="<?= base_url('section/deleteSection/') . $ds['id_section']; ?>" class="btn btn-sm btn-danger m-1 btn-delete" data-name="<?= $ds['nama_section']; ?>"><i class="fas fa-fw fa-trash"></i></a>
+												<a href="<?= base_url('galeri/deleteGaleri/') . $dg['id_galeri']; ?>" class="btn btn-sm btn-danger m-1 btn-delete" data-name="<?= $dg['img_galeri']; ?>"><i class="fas fa-fw fa-trash"></i></a>
 											<?php endif ?>
 										</td>
 									</tr>

@@ -29,7 +29,7 @@
 							<?= form_error('nama_section', '<small class="text-danger">', '</small>'); ?>
 						</div>
 						<div class="form-group">
-							<label for="konten_section">Nama Section</label>
+							<label for="konten_section">Konten Section</label>
 							<textarea placeholder="Bisa menggunakan html" id="konten_section" class="form-control <?= (form_error('konten_section')) ? 'is-invalid' : ''; ?>" name="konten_section" required><?= (set_value('konten_section')) ? set_value('konten_section') : $section['konten_section']; ?></textarea>
 							<?= form_error('konten_section', '<small class="text-danger">', '</small>'); ?>
 						</div>

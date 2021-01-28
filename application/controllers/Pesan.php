@@ -1,12 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Portfolio extends CI_Controller {
+class Pesan extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('Portfolio_model', 'pomo');
+		$this->load->model('Pesan_model', 'pemo');
 		$this->load->model('Admin_model', 'admo');
 	}
 
@@ -21,12 +22,13 @@ class Portfolio extends CI_Controller {
 	{
 		$this->checkLoginAdmin();
 		
-		$data['title'] 		= 'Portfolio';
-		$data['portfolio']	= $this->pomo->getPortfolio();
+		$data['title'] 		= 'Pesan';
+		$data['portfolio'] 	= $this->pomo->getPortfolio();
+		$data['pesan']		= $this->pemo->getPesan();
 		$data['dataUser'] 	= $this->admo->getDataUser();
 		
 		$this->load->view('templates/admin/header-admin', $data);
-		$this->load->view('portfolio/index', $data);
+		$this->load->view('pesan/index', $data);
 		$this->load->view('templates/admin/footer-admin', $data);
 	}
 }

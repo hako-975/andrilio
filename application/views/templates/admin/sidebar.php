@@ -24,10 +24,13 @@
       <a href="<?= base_url('section'); ?>"><i class="fas fa-fw fa-puzzle-piece"></i> Section</a>
     </li>
     <li>
+      <a href="<?= base_url('galeri'); ?>"><i class="fas fa-fw fa-image"></i> Galeri</a>
+    </li>
+    <li>
       <a href="<?= base_url('sosialMedia'); ?>"><i class="fab fa-fw fa-facebook"></i> Sosial Media</a>
     </li>
     <li>
-      <a href="#"><i class="fas fa-fw fa-phone"></i> Kontak</a>
+      <a href="<?= base_url('pesan'); ?>"><i class="fas fa-fw fa-envelope"></i> Pesan</a>
     </li>
     <li>
       <a href="#"><i class="fas fa-fw fa-stopwatch"></i> Log</a>

@@ -30,7 +30,7 @@
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-pink">
 		<div class="container">
-			<a class="navbar-brand" href=""><img class="img-fluid img-w-150 rounded my-auto" src="<?= base_url('assets/img/img_properties/') . $portfolio['img_navbar_brand']; ?>" alt="img-navbar-brand"></a>
+			<a class="navbar-brand" href="<?= base_url(); ?>"><img class="img-fluid img-w-150 rounded my-auto" src="<?= base_url('assets/img/img_properties/') . $portfolio['img_navbar_brand']; ?>" alt="img-navbar-brand"></a>
 			<button class="navbar-toggler bg-red-brown" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -60,7 +60,9 @@
 <main role="main" class="flex-shrink-0 mt-4">
 	<div class="jumbotron jumbotron-fluid mt-4 mb-n1">
 		<div class="container text-center">
-			<img class="img-fluid rounded-circle img-300" src="<?= base_url('assets/img/img_profil/') . $portfolio['img_profile']; ?>" alt="img-profile">
+			<a href="<?= base_url('assets/img/img_profil/') . $portfolio['img_profile']; ?>" class="enlarge">
+				<img class="img-fluid rounded-circle img-300" src="<?= base_url('assets/img/img_profil/') . $portfolio['img_profile']; ?>" alt="img-profile">
+			</a>
 			<h1 class="heading_1 text-red-brown mt-3"><?= $portfolio['heading_1']; ?></h1>
 			<h3 class="heading_2 text-red-brown"><?= $portfolio['heading_2']; ?></h3>
 		</div>

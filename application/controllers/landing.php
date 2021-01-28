@@ -59,7 +59,7 @@ class Landing extends CI_Controller {
 				'pesan_pengirim' => $pesan_pengirim
 			];
 			
-			$this->db->insert('pengirim', $data);
+			$this->db->insert('pesan', $data);
 
 			$config = [
 				'protocol'  => 'smtp',
