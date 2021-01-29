@@ -20,7 +20,7 @@ class Section_model extends CI_Model
 	{
 		$data = [
 			'nama_section' => $this->input->post('nama_section', true),
-			'konten_section' => $this->input->post('konten_section', true)
+			'konten_section' => $this->input->post('konten_section')
 		];
 
 		$this->db->insert('section', $data);
@@ -34,7 +34,7 @@ class Section_model extends CI_Model
 	{
 		$data = [
 			'nama_section' => $this->input->post('nama_section', true),
-			'konten_section' => $this->input->post('konten_section', true)
+			'konten_section' => $this->input->post('konten_section')
 		];
 
 		$this->db->update('section', $data, ['id_section' => $id]);

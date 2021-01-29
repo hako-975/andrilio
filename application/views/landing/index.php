@@ -79,7 +79,7 @@
 				</div>
 				<div class="row my-3">
 					<div class="col-lg">
-						<?= htmlspecialchars_decode($ds['konten_section']); ?>
+						<?= $ds['konten_section']; ?>
 					</div>
 				</div>
 			</div>
