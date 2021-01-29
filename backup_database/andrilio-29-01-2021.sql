@@ -36,7 +36,7 @@ CREATE TABLE `galeri` (
 
 LOCK TABLES `galeri` WRITE;
 /*!40000 ALTER TABLE `galeri` DISABLE KEYS */;
-INSERT INTO `galeri` VALUES (1,'1.jpg',NULL),(2,'2.jpg',NULL),(3,'3.jpg',NULL),(4,'4.jpg',NULL),(5,'5.jpg',NULL),(6,'6.jpg',NULL),(7,'7.jpg',NULL),(8,'8.jpg',NULL),(9,'9.jpg',NULL),(10,'10.jpg',NULL);
+INSERT INTO `galeri` VALUES (1,'1.jpg',NULL),(2,'2.jpg',NULL),(3,'3.jpg',NULL),(4,'4.jpg',NULL),(5,'5.jpg',NULL),(6,'6.jpg',NULL),(7,'7.jpg',NULL),(8,'8.jpg',NULL),(9,'9.jpg',NULL),(10,'10.jpg',NULL),(11,'11.jpg',NULL),(12,'12.jpg',NULL);
 /*!40000 ALTER TABLE `galeri` ENABLE KEYS */;
 UNLOCK TABLES;
 

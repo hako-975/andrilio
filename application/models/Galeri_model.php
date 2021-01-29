@@ -18,7 +18,7 @@ class Galeri_model extends CI_Model
 	// ------------------ START INSERT ------------------
 	private function _set_upload_options(){
 		$config = [];
-		$config['upload_path'] 		= 'assets/img/img_galeri/'; 
+		$config['upload_path'] 		= './assets/img/img_galeri/'; 
 		$config['remove_spaces']	= TRUE;
 		$config['encrypt_name'] 	= TRUE; 
 		$config['allowed_types'] 	= 'gif|jpg|png|jpeg|GIF|JPG|PNG|JPEG';
