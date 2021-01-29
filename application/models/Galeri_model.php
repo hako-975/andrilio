@@ -76,9 +76,10 @@ class Galeri_model extends CI_Model
 
 		$img_galeri = $_FILES['img_galeri']['name'];
 		if ($img_galeri) {
-			$config['upload_path'] = realpath(FCPATH . '/assets/img/img_galeri/');
+			$config['upload_path'] 	 = realpath(FCPATH . '/assets/img/img_galeri/');
 			$config['allowed_types'] = 'gif|jpg|png|jpeg';
-		
+			$config['max_size'] 	 = '20480';
+
 			$this->load->library('upload', $config);
 		
 			if ($this->upload->do_upload('img_galeri')) {
