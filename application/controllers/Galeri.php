@@ -59,7 +59,7 @@ class Galeri extends CI_Controller {
 		$data['portfolio'] 	= $this->pomo->getPortfolio();
 		$data['dataUser'] 	= $this->admo->getDataUser();
 		
-		$this->form_validation->set_rules('img_galeri', 'Gambar', 'required|trim');
+		$this->form_validation->set_rules('dump_validation', 'Dump Validation', 'required|trim');
 		if ($this->form_validation->run() == false) {
 			$this->load->view('templates/admin/header-admin', $data);
 			$this->load->view('galeri/update_galeri', $data);

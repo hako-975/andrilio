@@ -69,6 +69,36 @@ class Galeri_model extends CI_Model
 	}
 	// ------------------ END INSERT ------------------
 	
+	// ------------------ START UPDATE ------------------
+	public function updateGaleri($id)
+	{
+		$dg = $this->getGaleriById($id);
+
+		$img_galeri = $_FILES['img_galeri']['name'];
+		if ($img_galeri) {
+			$config['upload_path'] = './assets/img/img_galeri/';
+			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		
+			$this->load->library('upload', $config);
+		
+			if ($this->upload->do_upload('img_galeri')) {
+				if ($old_galeri != 'default.png') {
+					unlink(FCPATH . 'assets/img/img_galeri/' . $dg['img_galeri']);
+				}
+				$new_img_galeri = $this->upload->data('file_name');
+				$this->db->set('img_galeri', $new_img_galeri);
+			} else {
+				echo $this->upload->display_errors();
+			}
+		}
+		
+		$this->db->where('id_galeri', $id);
+		$this->db->update('galeri');
+		$this->session->set_flashdata('message-success', 'Foto berhasil diubah');
+		redirect('galeri/index');
+	}
+	// ------------------ END UPDATE ------------------
+	
 	// ------------------ START DELETE ------------------
 	public function deleteGaleri($id)
 	{
