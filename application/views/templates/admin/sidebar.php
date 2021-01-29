@@ -17,9 +17,9 @@
     <li>
       <a href="<?= base_url('user'); ?>"><i class="fas fa-fw fa-users"></i> Pengguna</a>
     </li>
-    <li>
+<!--     <li>
       <a href="<?= base_url('portfolio'); ?>"><i class="fas fa-fw fa-file-alt"></i> Portfolio</a>
-    </li>
+    </li> -->
     <li>
       <a href="<?= base_url('section'); ?>"><i class="fas fa-fw fa-puzzle-piece"></i> Section</a>
     </li>
@@ -33,7 +33,7 @@
       <a href="<?= base_url('pesan'); ?>"><i class="fas fa-fw fa-envelope"></i> Pesan</a>
     </li>
     <li>
-      <a href="#"><i class="fas fa-fw fa-stopwatch"></i> Log</a>
+      <a href="<?= base_url('log'); ?>"><i class="fas fa-fw fa-stopwatch"></i> Log</a>
     </li>
   </ul>
 </nav>

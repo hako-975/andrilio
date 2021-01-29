@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_model extends CI_Model 
 {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Log_model', 'lomo');
+	}
+
 	// ------------------ START GET ------------------
 	public function getUser()
 	{
@@ -34,6 +40,7 @@ class User_model extends CI_Model
 		];
 
 		$this->db->insert('user', $data);
+		$this->lomo->insertLog('Pengguna <b>' . $data['username'] . '</b> berhasil ditambahkan');
 		$this->session->set_flashdata('message-success', 'pengguna ' . $data['username'] . ' berhasil ditambahkan');
 		redirect('user/index');
 	}
@@ -50,6 +57,7 @@ class User_model extends CI_Model
 		];
 
 		$this->db->update('user', $data, ['id_user' => $id]);
+		$this->lomo->insertLog('Pengguna <b>' . $user['username'] . '</b> berhasil diubah');
 		$this->session->set_flashdata('message-success', 'pengguna ' . $user['username'] . ' berhasil diubah');
 		redirect('user/index');
 	}
@@ -60,6 +68,7 @@ class User_model extends CI_Model
 	{
 		$username = $this->getUserById($id)['username'];
 		$this->db->delete('user', ['id_user' => $id]);
+		$this->lomo->insertLog('Pengguna <b>' . $username . '</b> berhasil diubah');
 		$this->session->set_flashdata('message-success', 'pengguna ' . $username . ' berhasil dihapus');
 		redirect('user/index');
 	}

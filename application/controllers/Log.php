@@ -15,9 +15,10 @@ class Log extends CI_Controller
 	public function checkLoginAdmin()
 	{
 		if (($this->session->userdata('username') && $this->session->userdata('id_role')) == false) {
-		redirect('auth/logout');
+			redirect('auth/logout');
+		}
 	}
-
+	
 	public function index()
 	{
 		$this->checkLoginAdmin();

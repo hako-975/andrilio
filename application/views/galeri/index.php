@@ -27,7 +27,7 @@
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>Galeri</th>
+									<th>Foto</th>
 									<th>Aksi</th>
 								</tr>
 							</thead>

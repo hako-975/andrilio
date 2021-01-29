@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Galeri_model extends CI_Model 
 {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Log_model', 'lomo');
+	}
+
 	// ------------------ START GET ------------------
 	public function getGaleri()
 	{
@@ -63,6 +69,7 @@ class Galeri_model extends CI_Model
 			echo explode('<br>',$error);
 		} else {
 			$this->db->insert_batch('galeri', $image);
+			$this->lomo->insertLog('berhasil menambahkan foto <b>' . $image . '</b>');
 			$this->session->set_flashdata('message-success', 'Foto berhasil ditambahkan');
 			redirect('galeri/index');
 		}
@@ -95,6 +102,7 @@ class Galeri_model extends CI_Model
 		
 		$this->db->where('id_galeri', $id);
 		$this->db->update('galeri');
+		$this->lomo->insertLog('berhasil mengubah foto <b>' . $new_img_galeri . '</b>');
 		$this->session->set_flashdata('message-success', 'Foto berhasil diubah');
 		redirect('galeri/index');
 	}
@@ -109,6 +117,7 @@ class Galeri_model extends CI_Model
 			unlink(FCPATH . 'assets/img/img_galeri/' . $dataGaleri['img_galeri']);
 		}
 		$this->db->delete('galeri', ['id_galeri' => $id]);
+		$this->lomo->insertLog('berhasil menghapus foto <b>' . $foto_lama . '</b>');
 		$this->session->set_flashdata('message-success', 'Foto berhasil dihapus');
 		redirect('galeri/index');
 	}	

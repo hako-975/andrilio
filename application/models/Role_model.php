@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Role_model extends CI_Model 
 {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Log_model', 'lomo');
+	}
+
 	// ------------------ START GET ------------------
 	public function getRole()
 	{
@@ -23,6 +29,7 @@ class Role_model extends CI_Model
 		];
 
 		$this->db->insert('role', $data);
+		$this->lomo->insertLog('Role <b>' . $data['nama_role'] . '</b> berhasil ditambahkan');
 		$this->session->set_flashdata('message-success', 'Role ' . $data['nama_role'] . ' berhasil ditambahkan');
 		redirect('role/index');
 	}
@@ -36,6 +43,7 @@ class Role_model extends CI_Model
 		];
 
 		$this->db->update('role', $data, ['id_role' => $id]);
+		$this->lomo->insertLog('Role <b>' . $data['nama_role'] . '</b> berhasil diubah');
 		$this->session->set_flashdata('message-success', 'Role ' . $data['nama_role'] . ' berhasil diubah');
 		redirect('role/index');
 	}
@@ -47,6 +55,7 @@ class Role_model extends CI_Model
 		$nama_role = $this->getRoleById($id)['nama_role'];
 		
 		$this->db->delete('role', ['id_role' => $id]);
+		$this->lomo->insertLog('Role <b>' . $nama_role . '</b> berhasil dihapus');
 		$this->session->set_flashdata('message-success', 'Role ' . $nama_role . ' berhasil dihapus');
 		redirect('role/index');
 	}

@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class SosialMedia_model extends CI_Model 
 {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Log_model', 'lomo');
+	}
+
 	// ------------------ START GET ------------------
 	public function getSosialMedia()
 	{
@@ -25,6 +31,7 @@ class SosialMedia_model extends CI_Model
 		];
 
 		$this->db->insert('sosial_media', $data);
+		$this->lomo->insertLog('Sosial Media <b>' . $data['nama_sosial_media'] . '</b> berhasil ditambahkan');
 		$this->session->set_flashdata('message-success', 'Sosial Media ' . $data['nama_sosial_media'] . ' berhasil ditambahkan');
 		redirect('sosialMedia/index');
 	}
@@ -40,6 +47,7 @@ class SosialMedia_model extends CI_Model
 		];
 
 		$this->db->update('sosial_media', $data, ['id_sosial_media' => $id]);
+		$this->lomo->insertLog('Sosial Media <b>' . $data['nama_sosial_media'] . '</b> berhasil diubah');
 		$this->session->set_flashdata('message-success', 'Sosial Media ' . $data['nama_sosial_media'] . ' berhasil diubah');
 		redirect('sosialMedia/index');
 	}
@@ -51,6 +59,7 @@ class SosialMedia_model extends CI_Model
 		$nama_sosial_media = $this->getSosialMediaById($id)['nama_sosial_media'];
 		
 		$this->db->delete('sosial_media', ['id_sosial_media' => $id]);
+		$this->lomo->insertLog('Sosial Media <b>' . $nama_sosial_media . '</b> berhasil dihapus');
 		$this->session->set_flashdata('message-success', 'sosial media ' . $nama_sosial_media . ' berhasil dihapus');
 		redirect('sosialMedia/index');
 	}

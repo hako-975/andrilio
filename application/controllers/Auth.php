@@ -7,6 +7,7 @@ class Auth extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Auth_model', 'aumo');
+		$this->load->model('Log_model', 'lomo');
 	}
 
 	public function checkLogin()
@@ -57,17 +58,20 @@ class Auth extends CI_Controller {
 					if(isset($_GET['link'])) {
 						redirect($_GET['link']);
 					}
-
+					$this->lomo->insertLog('Pengguna <b>' . $data_session['username'] . '</b> berhasil Login');
 					redirect('admin');
 				} else {
+					$this->lomo->insertLog('Pengguna <b>' . $username . '</b> gagal login, salah memasukkan password');
 					$this->session->set_flashdata('message-failed', 'Password yang anda masukkan salah');
 					redirect('auth');
 				}
 			} else {
+				$this->lomo->insertLog('Pengguna <b>' . $username . '</b> gagal login, akunnya belum di aktivasi');
 				$this->session->set_flashdata('message-failed', 'This ' . $username . ' belum di aktivasi');
 				redirect('auth');
 			}
 		} else {
+			$this->lomo->insertLog('Pengguna <b>' . $username . '</b> gagal login, akunnya belum di registrasi');
 			$this->session->set_flashdata('message-failed', $username . ' belum di registrasi');
 			redirect('auth');
 		}

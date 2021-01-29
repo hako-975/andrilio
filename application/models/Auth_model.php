@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth_model extends CI_Model 
 {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Log_model', 'lomo');
+	}
+
 	// ------------------ START GET ------------------
 	public function getUserByUsernameOrEmail($keyword)
 	{
@@ -32,6 +38,7 @@ class Auth_model extends CI_Model
 	{
 		$this->db->set('is_active', 1);
 		$this->db->where('email', $email);
+		$this->lomo->insertLog('Pengguna <b>' . $email . '</b> berhasil diaktifkan');
 		return $this->db->update('user');
 	}
 
@@ -39,6 +46,7 @@ class Auth_model extends CI_Model
 	{
 		$this->db->set('password', $password);
 		$this->db->where('email', $email);
+		$this->lomo->insertLog('Pengguna <b>' . $email . '</b> berhasil mengubah password');
 		return $this->db->update('user');
 	}
 	// ------------------ END UPDATE ------------------
@@ -46,11 +54,13 @@ class Auth_model extends CI_Model
 	// ------------------ START DELETE ------------------
 	public function deleteTokenByEmail($email)
 	{
+		$this->lomo->insertLog('Token pengguna <b>' . $email . '</b> kadaluarsa');
 		return $this->db->delete('user_token', ['email' => $email]);
 	}
 
 	public function deleteUserByEmail($email)
 	{
+		$this->lomo->insertLog('Pengguna <b>' . $email . '</b> berhasil dihapus');
 		return $this->db->delete('user', ['email' => $email]);
 	}
 	// ------------------ END DELETE ------------------

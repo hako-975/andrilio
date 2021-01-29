@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Section_model extends CI_Model 
 {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Log_model', 'lomo');
+	}
+
 	// ------------------ START GET ------------------
 	public function getSection()
 	{
@@ -24,6 +30,7 @@ class Section_model extends CI_Model
 		];
 
 		$this->db->insert('section', $data);
+		$this->lomo->insertLog('Section <b>' . $data['nama_section'] . '</b> berhasil ditambahkan');
 		$this->session->set_flashdata('message-success', 'Section ' . $data['nama_section'] . ' berhasil ditambahkan');
 		redirect('section/index');
 	}
@@ -38,6 +45,7 @@ class Section_model extends CI_Model
 		];
 
 		$this->db->update('section', $data, ['id_section' => $id]);
+		$this->lomo->insertLog('Section <b>' . $data['nama_section'] . '</b> berhasil diubah');
 		$this->session->set_flashdata('message-success', 'Section ' . $data['nama_section'] . ' berhasil diubah');
 		redirect('section/index');
 	}
@@ -49,6 +57,7 @@ class Section_model extends CI_Model
 		$nama_section = $this->getSectionById($id)['nama_section'];
 		
 		$this->db->delete('section', ['id_section' => $id]);
+		$this->lomo->insertLog('Section <b>' . $nama_section . '</b> berhasil dihapus');
 		$this->session->set_flashdata('message-success', 'Section ' . $nama_section . ' berhasil dihapus');
 		redirect('section/index');
 	}

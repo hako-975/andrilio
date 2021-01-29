@@ -6,6 +6,7 @@ class Admin_model extends CI_Model
 	public function __construct()
 	{
 		$this->load->model('Auth_model', 'aumo');
+		$this->load->model('Log_model', 'lomo');
 	}
 
 	// ------------------ START GET ------------------
@@ -56,6 +57,7 @@ class Admin_model extends CI_Model
 			'email' => $this->input->post('email', true)
 		];
 		$this->db->update('user', $data, ['id_user' => $this->getDataUser()['id_user']]);
+		$this->lomo->insertLog('Pengguna <b>' . $data['username'] . '</b> | <b>' . $data['email'] . '</b> berhasil mengubah profil');
 		$this->session->set_flashdata('message-success', 'updateProfile');
 		redirect('auth/logout');
 	}
