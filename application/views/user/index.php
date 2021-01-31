@@ -53,8 +53,8 @@
 										<?php endif ?>
 										<?php if ($dataUser['id_role'] == '1'): ?>
 											<td>
-												<a href="<?= base_url('user/updateUser/' . $du['id_user']); ?>" class="btn btn-sm btn-success m-1"><i class="fas fa-fw fa-edit"></i></a>
 												<?php if ($du['id_role'] != '1'): ?>
+													<a href="<?= base_url('user/updateUser/' . $du['id_user']); ?>" class="btn btn-sm btn-success m-1"><i class="fas fa-fw fa-edit"></i></a>
 													<a href="<?= base_url('user/deleteUser/') . $du['id_user']; ?>" class="btn btn-sm btn-danger m-1 btn-delete" data-name="<?= $du['username']; ?>"><i class="fas fa-fw fa-trash"></i></a>
 												<?php endif ?>
 											</td>

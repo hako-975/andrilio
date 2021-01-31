@@ -29,7 +29,9 @@
 							  	<option value="<?= $user['id_role']; ?>"><?= $user['nama_role']; ?></option>
 								<?php foreach ($role as $dr): ?>
 									<?php if ($dr['id_role'] != $user['id_role']): ?>
-									  <option value="<?= $dr['id_role']; ?>"><?= $dr['nama_role']; ?></option>
+										<?php if ($dr['id_role'] != '1'): ?>
+										  <option value="<?= $dr['id_role']; ?>"><?= $dr['nama_role']; ?></option>
+										<?php endif ?>
 									<?php endif ?>
 								<?php endforeach ?>
 							</select>

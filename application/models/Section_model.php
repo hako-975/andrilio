@@ -7,6 +7,7 @@ class Section_model extends CI_Model
 	{
 		parent::__construct();
 		$this->load->model('Log_model', 'lomo');
+		$this->load->model('Admin_model', 'admo');
 	}
 
 	// ------------------ START GET ------------------
@@ -54,6 +55,8 @@ class Section_model extends CI_Model
 	// ------------------ START DELETE ------------------
 	public function deleteSection($id)
 	{
+		$this->admo->checkRoleIsAdmin('menghapus section dengan id ' . $id);
+
 		$nama_section = $this->getSectionById($id)['nama_section'];
 		
 		$this->db->delete('section', ['id_section' => $id]);

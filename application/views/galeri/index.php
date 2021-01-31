@@ -14,11 +14,9 @@
 				<div class="col-lg header-title">
 					<h3><i class="fas fa-fw fa-puzzle-piece"></i> Galeri</h3>
 				</div>
-				<?php if ($dataUser['id_role'] == '1'): ?>
-					<div class="col-lg header-button">
-						<a class="btn btn-red-brown" href="<?= base_url('galeri/insertGaleri'); ?>"><i class="fas fa-fw fa-plus"></i> Tambah Galeri</a>
-					</div>
-				<?php endif ?>
+				<div class="col-lg header-button">
+					<a class="btn btn-red-brown" href="<?= base_url('galeri/insertGaleri'); ?>"><i class="fas fa-fw fa-plus"></i> Tambah Galeri</a>
+				</div>
 			</div>
 			<div class="row my-2">
 				<div class="col-lg">

@@ -16,6 +16,12 @@ class Admin_model extends CI_Model
 		return $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 	}
 
+	public function getDataUserById($id)
+	{
+		$this->db->join('role', 'role.id_role = user.id_role');
+		return $this->db->get_where('user', ['id_user' => $id])->row_array();
+	}
+
 	public function getCountRows($table)
 	{
 		return $this->db->get($table)->num_rows();
@@ -67,4 +73,19 @@ class Admin_model extends CI_Model
 		redirect('auth/logout');
 	}
 	// ------------------ END UPDATE ------------------
+
+	// ------------------ START CHECK ROLE is Admin ------------------
+	public function checkRoleIsAdmin($isi)
+	{
+		$id_role  = $this->getDataUser()['id_role'];
+		$username = $this->getDataUser()['username'];
+
+		if ($id_role != '1') {
+			$this->session->set_flashdata('message-failed', 'Pengguna ' . $username . ' tidak memiliki hak akses untuk ' . $isi . ', segera hubungi administrator untuk info lebih lanjut');
+			$this->lomo->insertLog('Pengguna <b>' . $username . '</b> mencoba ' . $isi);
+			redirect('admin');
+		}
+	}
+	// ------------------ END CHECK ROLE is Admin ------------------
+
 }

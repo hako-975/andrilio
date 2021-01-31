@@ -7,6 +7,7 @@ class SosialMedia_model extends CI_Model
 	{
 		parent::__construct();
 		$this->load->model('Log_model', 'lomo');
+		$this->load->model('Admin_model', 'admo');
 	}
 
 	// ------------------ START GET ------------------
@@ -56,6 +57,8 @@ class SosialMedia_model extends CI_Model
 	// ------------------ START DELETE ------------------
 	public function deleteSosialMedia($id)
 	{
+		$this->admo->checkRoleIsAdmin('menghapus sosial media dengan id ' . $id);
+
 		$nama_sosial_media = $this->getSosialMediaById($id)['nama_sosial_media'];
 		
 		$this->db->delete('sosial_media', ['id_sosial_media' => $id]);

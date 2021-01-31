@@ -67,7 +67,7 @@ class Auth extends CI_Controller {
 				}
 			} else {
 				$this->lomo->insertLog('Pengguna <b>' . $username . '</b> gagal login, akunnya belum di aktivasi');
-				$this->session->set_flashdata('message-failed', 'This ' . $username . ' belum di aktivasi');
+				$this->session->set_flashdata('message-failed', 'Pengguna ' . $username . ' gagal login, akunnya belum di aktivasi');
 				redirect('auth');
 			}
 		} else {

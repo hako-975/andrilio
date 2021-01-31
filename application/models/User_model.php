@@ -7,6 +7,7 @@ class User_model extends CI_Model
 	{
 		parent::__construct();
 		$this->load->model('Log_model', 'lomo');
+		$this->load->model('Admin_model', 'admo');
 	}
 
 	// ------------------ START GET ------------------
@@ -26,6 +27,8 @@ class User_model extends CI_Model
 	// ------------------ START INSERT ------------------
 	public function insertUser()
 	{
+		$this->admo->checkRoleIsAdmin('menambahkan pengguna');
+
 		$is_active = $this->input->post('is_active', true);
 		if ($is_active == null) {
 			$is_active = 0;
@@ -49,12 +52,23 @@ class User_model extends CI_Model
 	// ------------------ START UPDATE ------------------
 	public function updateUser($id)
 	{
+		$this->admo->checkRoleIsAdmin('mengubah pengguna dengan id ' . $id);
+		
+		$id_role = $this->admo->getDataUserById($id)['id_role'];
+
+		if ($id_role == '1') {
+			$this->session->set_flashdata('message-failed', 'Pengguna ' . $this->admo->getDataUser()['username'] . ' tidak dapat mengubah pengguna dengan role administrator');
+			$this->lomo->insertLog('Pengguna <b>' . $this->admo->getDataUser()['username'] . '</b> mencoba mengubah pengguna dengan role administrator');
+			redirect('admin');
+		}
+
 		$user = $this->getUserById($id);
 
 		$data = [
 			'id_role' 	=> $this->input->post('id_role', true),
 			'is_active' => $this->input->post('is_active', true)
 		];
+
 
 		$this->db->update('user', $data, ['id_user' => $id]);
 		$this->lomo->insertLog('Pengguna <b>' . $user['username'] . '</b> berhasil diubah');
@@ -66,6 +80,16 @@ class User_model extends CI_Model
 	// ------------------ START DELETE ------------------
 	public function deleteUser($id)
 	{
+		$this->admo->checkRoleIsAdmin('menghapus pengguna dengan id ' . $id);
+
+		$id_role = $this->admo->getDataUserById($id)['id_role'];
+
+		if ($id_role == '1') {
+			$this->session->set_flashdata('message-failed', 'Pengguna ' . $this->admo->getDataUser()['username'] . ' tidak dapat menghapus pengguna dengan role administrator');
+			$this->lomo->insertLog('Pengguna <b>' . $this->admo->getDataUser()['username'] . '</b> mencoba menghapus pengguna dengan role administrator');
+			redirect('admin');
+		}
+
 		$username = $this->getUserById($id)['username'];
 		$this->db->delete('user', ['id_user' => $id]);
 		$this->lomo->insertLog('Pengguna <b>' . $username . '</b> berhasil diubah');

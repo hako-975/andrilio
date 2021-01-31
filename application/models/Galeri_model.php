@@ -7,6 +7,7 @@ class Galeri_model extends CI_Model
 	{
 		parent::__construct();
 		$this->load->model('Log_model', 'lomo');
+		$this->load->model('Admin_model', 'admo');
 	}
 
 	// ------------------ START GET ------------------
@@ -111,6 +112,8 @@ class Galeri_model extends CI_Model
 	// ------------------ START DELETE ------------------
 	public function deleteGaleri($id)
 	{
+		$this->admo->checkRoleIsAdmin('menghapus galeri dengan id ' . $id);
+		
 		$dataGaleri = $this->getGaleriById($id);
 		$foto_lama = $dataGaleri['img_galeri'];
 		if ($foto_lama != 'default.png') {

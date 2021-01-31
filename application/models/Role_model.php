@@ -7,6 +7,7 @@ class Role_model extends CI_Model
 	{
 		parent::__construct();
 		$this->load->model('Log_model', 'lomo');
+		$this->load->model('Admin_model', 'admo');
 	}
 
 	// ------------------ START GET ------------------
@@ -38,6 +39,8 @@ class Role_model extends CI_Model
 	// ------------------ START UPDATE ------------------
 	public function updateRole($id)
 	{
+		$this->admo->checkRoleIsAdmin('mengubah role dengan id ' . $id);
+
 		$data = [
 			'nama_role' => $this->input->post('nama_role', true)
 		];
@@ -52,6 +55,13 @@ class Role_model extends CI_Model
 	// ------------------ START DELETE ------------------
 	public function deleteRole($id)
 	{
+		$this->admo->checkRoleIsAdmin('menghapus role dengan id ' . $id);
+		if ($id == '1') {
+			$this->session->set_flashdata('message-failed', 'Pengguna ' . $this->admo->getDataUser()['username'] . ' tidak dapat menghapus role administrator');
+			$this->lomo->insertLog('Pengguna <b>' . $this->admo->getDataUser()['username'] . '</b> mencoba menghapus role administrator');
+			redirect('admin');
+		}
+
 		$nama_role = $this->getRoleById($id)['nama_role'];
 		
 		$this->db->delete('role', ['id_role' => $id]);
