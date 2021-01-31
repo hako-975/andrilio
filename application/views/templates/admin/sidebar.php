@@ -17,9 +17,9 @@
     <li>
       <a href="<?= base_url('user'); ?>"><i class="fas fa-fw fa-users"></i> Pengguna</a>
     </li>
-<!--     <li>
+    <li>
       <a href="<?= base_url('portfolio'); ?>"><i class="fas fa-fw fa-file-alt"></i> Portfolio</a>
-    </li> -->
+    </li>
     <li>
       <a href="<?= base_url('section'); ?>"><i class="fas fa-fw fa-puzzle-piece"></i> Section</a>
     </li>

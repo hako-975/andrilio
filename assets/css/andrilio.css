@@ -2,9 +2,9 @@
 @import "https://fonts.googleapis.com/css?family=Montserrat:600";
 @import "https://fonts.googleapis.com/css2?family=Lobster";
 body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    background: #fafafa;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  background: #fafafa;
 }
 
 /*------------ Sticky Footer ------------*/
@@ -120,7 +120,6 @@ section.striped:nth-of-type(odd) {
 	color: #FFF5F5 !important;
   background-color: rgb(204,129,119);
 }
-
 
 /*------------ section ------------*/
 
@@ -266,3 +265,12 @@ table > thead > tr > th, table > tbody > tr > td  {
   vertical-align: middle !important;
 }
 /*------------ align middle table ------------*/
+
+.portfolio-title {
+  max-width: 100px;
+}
+@media (min-width: 850px) {
+  .portfolio-title {
+    max-width: 220px;
+  }
+}

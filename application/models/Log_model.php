@@ -20,10 +20,16 @@ class Log_model extends CI_Model
 	// ------------------ START INSERT ------------------
 	public function insertLog($isi_log)
 	{
+		if ($id_user = $this->admo->getDataUser()['id_user'] == null) {
+			$id_user = 0;
+		} else {
+			$id_user = $this->admo->getDataUser()['id_user'];			
+		}
+
 		$data = [
 			'isi_log' 	=> $isi_log,
 			'date_log' 	=> time(),
-			'id_user' 	=> $this->admo->getDataUser()['id_user']
+			'id_user' 	=> $id_user
 		];
 
 		return $this->db->insert('log', $data);
