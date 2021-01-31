@@ -16,7 +16,7 @@
 				</div>
 				<?php if ($dataUser['id_role'] == '1'): ?>
 					<div class="col-lg header-button">
-						<a class="btn btn-primary" href="<?= base_url('role/insertRole'); ?>"><i class="fas fa-fw fa-plus"></i> Tambah Role</a>
+						<a class="btn btn-red-brown" href="<?= base_url('role/insertRole'); ?>"><i class="fas fa-fw fa-plus"></i> Tambah Role</a>
 					</div>
 				<?php endif ?>
 			</div>

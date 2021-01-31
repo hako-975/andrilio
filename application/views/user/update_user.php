@@ -12,7 +12,7 @@
 		<div class="container">
 			<div class="row my-2">
 				<div class="col-lg">
-					<a class="btn btn-primary" href="<?= base_url('user/index'); ?>"><i class="fas fa-fw fa-arrow-left"></i> Kembali</a>
+					<a class="btn btn-red-brown" href="<?= base_url('user/index'); ?>"><i class="fas fa-fw fa-arrow-left"></i> Kembali</a>
 				</div>
 			</div>
 			<div class="row my-2">
@@ -44,7 +44,7 @@
 						    <label class="form-check-label" for="is_active"> Aktif?</label>
 					  	</div>
 					  	<div class="form-group">
-					  		<button type="submit" name="btnUpdateUser" class="btn btn-primary"><i class="fas fa-fw fa-save"></i> Simpan</button>
+					  		<button type="submit" name="btnUpdateUser" class="btn btn-red-brown"><i class="fas fa-fw fa-save"></i> Simpan</button>
 					  	</div>
 					</form>
 				</div>

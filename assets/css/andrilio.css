@@ -266,6 +266,7 @@ table > thead > tr > th, table > tbody > tr > td  {
 }
 /*------------ align middle table ------------*/
 
+/*------------ portfolio title ------------*/
 .portfolio-title {
   max-width: 100px;
 }
@@ -273,4 +274,19 @@ table > thead > tr > th, table > tbody > tr > td  {
   .portfolio-title {
     max-width: 220px;
   }
+/*------------ portfolio title ------------*/
+
+/*------------ pagination color ------------*/
+/*.pagination > li > a, .pagination > li > span {
+  color: #CC8177!important;
+}
+*/
+.pagination > li.active > a, .pagination > li.active > span {
+  background-color: #CC8177!important;
+  color: #FFF5F5!important;
+}
+
+/*------------ pagination color ------------*/
+
+
 }

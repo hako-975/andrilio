@@ -12,7 +12,7 @@
 		<div class="container">
 			<div class="row my-2">
 				<div class="col-lg">
-					<a class="btn btn-primary" href="<?= base_url('role/index'); ?>"><i class="fas fa-fw fa-arrow-left"></i> Kembali</a>
+					<a class="btn btn-red-brown" href="<?= base_url('role/index'); ?>"><i class="fas fa-fw fa-arrow-left"></i> Kembali</a>
 				</div>
 			</div>
 			<div class="row my-2">
@@ -28,7 +28,7 @@
 							<input type="text" id="nama_role" class="form-control <?= (form_error('nama_role')) ? 'is-invalid' : ''; ?>" name="nama_role" required value="<?= (set_value('nama_role')) ? set_value('nama_role') : $role['nama_role']; ?>">
 						</div>
 					  	<div class="form-group">
-					  		<button type="submit" name="btnUpdateRole" class="btn btn-primary"><i class="fas fa-fw fa-save"></i> Simpan</button>
+					  		<button type="submit" name="btnUpdateRole" class="btn btn-red-brown"><i class="fas fa-fw fa-save"></i> Simpan</button>
 					  	</div>
 					</form>
 				</div>

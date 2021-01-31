@@ -52,6 +52,7 @@ class User extends CI_Controller {
 			$this->load->view('templates/admin/header-admin', $data);
 			$this->load->view('user/insert_user', $data);
 			$this->load->view('templates/admin/footer-admin', $data);
+			$this->load->view('templates/show_hide_password_registration', $data);	
 		} else {
 		    $this->usmo->insertUser();
 		}

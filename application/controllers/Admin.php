@@ -9,7 +9,6 @@ class Admin extends CI_Controller {
 
 		$this->load->model('portfolio_model', 'pomo');
 		$this->load->model('Admin_model', 'admo');
-		$this->load->model('Auth_model', 'aumo');
 	}
 
 	public function checkLoginAdmin()
@@ -23,9 +22,9 @@ class Admin extends CI_Controller {
 	{
 		$this->checkLoginAdmin();
 
-		$data['title'] 		= 'Dasbor';
-		$data['portfolio'] 	= $this->pomo->getPortfolio();
-		$data['dataUser'] 	= $this->admo->getDataUser();
+		$data['title'] 			= 'Dasbor';
+		$data['portfolio'] 		= $this->pomo->getPortfolio();
+		$data['dataUser'] 		= $this->admo->getDataUser();
 
 		$this->load->view('templates/admin/header-admin', $data);
 		$this->load->view('admin/index', $data);

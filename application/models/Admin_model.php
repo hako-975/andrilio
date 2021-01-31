@@ -15,6 +15,11 @@ class Admin_model extends CI_Model
 		$this->db->join('role', 'role.id_role = user.id_role');
 		return $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 	}
+
+	public function getCountRows($table)
+	{
+		return $this->db->get($table)->num_rows();
+	}
 	// ------------------ END GET ------------------
 
 	// ------------------ START UPDATE ------------------
