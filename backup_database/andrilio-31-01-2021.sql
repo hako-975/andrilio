@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Jan 2021 pada 07.57
+-- Waktu pembuatan: 31 Jan 2021 pada 09.49
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.13
 
@@ -85,27 +85,6 @@ CREATE TABLE `log` (
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data untuk tabel `log`
---
-
-INSERT INTO `log` (`id_log`, `isi_log`, `date_log`, `id_user`) VALUES
-(1, 'berhasil menambahkan foto <b>Array</b>', 1611935982, 1),
-(2, 'berhasil mengubah foto <b>corridor1.jpg</b>', 1611935999, 1),
-(3, 'Pengguna <b>Andrilio</b> berhasil Login', 1612001814, 1),
-(4, 'Pengguna <b>Andrilio</b> berhasil Login', 1612002806, 1),
-(5, 'Pengguna <b>Andrilio</b> berhasil Login', 1612003836, 1),
-(6, 'Section <b>Tentang</b> berhasil diubah', 1612004308, 1),
-(7, 'Pengguna <b>Andrilio</b> berhasil Login', 1612014132, 1),
-(8, 'Pengguna <b>Andrilio</b> berhasil Login', 1612014448, 1),
-(9, 'Pengguna <b>Andrilio</b> berhasil Login', 1612015228, 1),
-(10, 'Pengguna <b>Andrilio</b> berhasil Login', 1612015273, 1),
-(11, 'Pengguna <b>Andrilio</b> berhasil Login', 1612015396, 1),
-(12, 'Pengguna <b>Andrilio</b> berhasil Login', 1612015474, 1),
-(13, 'Pengguna <b>Andrilio</b> gagal login, salah memasukkan password', 1612076114, 0),
-(14, 'Pengguna <b>Andrilio</b> berhasil Login', 1612076120, 0),
-(15, 'Pengguna <b>Andrilio</b> berhasil Login', 1612076161, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -152,7 +131,7 @@ CREATE TABLE `portfolio` (
 --
 
 INSERT INTO `portfolio` (`id_portfolio`, `img_favicon`, `title`, `img_navbar_brand`, `img_profile`, `img_jumbotron`, `heading_1`, `heading_2`, `footer`) VALUES
-(1, 'favicon.png', 'AndrilioAndrilioAndrilioAndrilioAndrilioAndrilioAndrilioAndrilioAndrilioAndrilioAndrilioAndrilioAndr', 'img_navbar_brand.png', 'profile.jpg', 'bg-jumbotron.png', 'Andrilio', 'Andri Portfolio', '© 2020 Andrilio.');
+(1, 'favicon.png', 'Andrilio', 'img_navbar_brand.png', 'profile.jpg', 'bg-jumbotron.png', 'Andrilio', 'Andri Portfolio', '© 2020 Andrilio.');
 
 -- --------------------------------------------------------
 
@@ -214,7 +193,7 @@ INSERT INTO `sosial_media` (`id_sosial_media`, `nama_sosial_media`, `icon_sosial
 (1, 'Instagram', '<i class=\"fab fa-2x fa-instagram\"></i>', 'https://www.instagram.com/andri_firman_975'),
 (2, 'Facebook', '<i class=\"fab fa-2x fa-facebook\"></i>', 'https://web.facebook.com/hako975'),
 (3, 'Twitter', '<i class=\"fab fa-2x fa-twitter\"></i>', 'https://twitter.com/HausCoding'),
-(7, 'GitHub', '<i class=\"fab fa-2x fa-github\"></i>', 'https://github.com/hako-975');
+(4, 'GitHub', '<i class=\"fab fa-2x fa-github\"></i>', 'https://github.com/hako-975');
 
 -- --------------------------------------------------------
 
@@ -237,8 +216,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `email`, `password`, `id_role`, `date_created`, `is_active`) VALUES
-(1, 'Andrilio', 'andrilio9999@gmail.com', '$2y$10$YpR9y0EmPo4bnwbX4TYfCe88v3j5p0qRmC2EaAQzV5FKXEiLvFDHW', 1, 0, 1),
-(4, 'irgi', 'irgibungsu@gmail.com', '$2y$10$dTBCKUyDKnuEJYRKkfUX5e1tJgV4/lIY46A45DUD0YuB7h7YJZRwa', 2, 1611739351, 1);
+(1, 'Andrilio', 'andrilio9999@gmail.com', '$2y$10$YpR9y0EmPo4bnwbX4TYfCe88v3j5p0qRmC2EaAQzV5FKXEiLvFDHW', 1, 1611737351, 1),
+(2, 'irgi', 'irgibungsu@gmail.com', '$2y$10$dTBCKUyDKnuEJYRKkfUX5e1tJgV4/lIY46A45DUD0YuB7h7YJZRwa', 2, 1611739351, 1);
 
 -- --------------------------------------------------------
 
@@ -252,17 +231,6 @@ CREATE TABLE `user_token` (
   `token` varchar(255) NOT NULL,
   `date_created` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data untuk tabel `user_token`
---
-
-INSERT INTO `user_token` (`id_user_token`, `email`, `token`, `date_created`) VALUES
-(1, 'andrilio9999@gmail.com', 'yfSrq80r5/sJ36aFShKl+JENK7MDBnlufM8gfDF/hwY=', 1611690779),
-(2, 'andrilio9999@gmail.com', 'fRcGhyx1IQfW7oUOSsGcBNFfrlUByQ3R4CvA/Q3de7o=', 1611690881),
-(3, 'andrilio9999@gmail.com', 'kVifury4oFLGD1g/8lsAIwMHn2sGvKZ2+rccUZbxh38=', 1611693357),
-(4, 'irgibungsu@gmail.com', '0IP6HfcVlyYFERbcn1TJs/zXK0IQj7QKbopZQIXAyk8=', 1612002408),
-(5, 'andrilio9999@gmail.com', 'peTT2PNyEagQcKzjon7w+psU0Neru0I7A7UfN9HFcU8=', 1612002646);
 
 --
 -- Indexes for dumped tables
@@ -338,7 +306,7 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT untuk tabel `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `kontak`
@@ -350,7 +318,7 @@ ALTER TABLE `kontak`
 -- AUTO_INCREMENT untuk tabel `log`
 --
 ALTER TABLE `log`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `pesan`
@@ -368,31 +336,31 @@ ALTER TABLE `portfolio`
 -- AUTO_INCREMENT untuk tabel `role`
 --
 ALTER TABLE `role`
-  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `section`
 --
 ALTER TABLE `section`
-  MODIFY `id_section` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_section` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `sosial_media`
 --
 ALTER TABLE `sosial_media`
-  MODIFY `id_sosial_media` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_sosial_media` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id_user_token` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user_token` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

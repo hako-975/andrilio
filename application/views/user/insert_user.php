@@ -63,7 +63,9 @@
 							<label for="id_role">Role</label>
 							<select name="id_role" id="id_role" class="custom-select">
 								<?php foreach ($role as $dr): ?>
-									<option value="<?= $dr['id_role']; ?>"><?= $dr['nama_role']; ?></option>
+									<?php if ($dr['id_role'] != '1'): ?>
+										<option value="<?= $dr['id_role']; ?>"><?= $dr['nama_role']; ?></option>
+									<?php endif ?>
 								<?php endforeach ?>
 							</select>
 						</div>
