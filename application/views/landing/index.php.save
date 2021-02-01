@@ -58,7 +58,7 @@
 
 <!-- Begin page content -->
 <main role="main" class="flex-shrink-0 mt-4">
-<div class="jumbotron jumbotron-fluid mt-4 mb-n1">
+	<div class="jumbotron jumbotron-fluid mt-4 mb-n1">
 		<div class="container text-center">
 			<a href="<?= base_url('assets/img/img_profil/') . $portfolio['img_profile']; ?>" class="enlarge">
 				<img class="img-fluid rounded-circle img-300" src="<?= base_url('assets/img/img_profil/') . $portfolio['img_profile']; ?>" alt="img-profile">
@@ -79,7 +79,7 @@
 				</div>
 				<div class="row my-3">
 					<div class="col-lg">
-						<?= htmlspecialchars_decode($ds['konten_section']); ?>
+						<?= $ds['konten_section']; ?>
 					</div>
 				</div>
 			</div>
@@ -105,8 +105,8 @@
 							<?php $col = 12 / $dg['kolom_galeri']; ?>
 							<div class="col-<?= $col; ?> my-2">
 						<?php endif ?>
-								<a href="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" class="enlarge">
-									<img class="img-fluid rounded" src="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" alt="<?= $dg['img_galeri']; ?>">
+								<a href="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" class="andrilio/galeri enlarge">
+									<img class="img-fluid rounded mx-auto" src="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" alt="<?= $dg['img_galeri']; ?>">
 								</a>
 							</div>
 					<?php endforeach ?>

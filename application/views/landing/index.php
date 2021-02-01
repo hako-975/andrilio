@@ -106,7 +106,7 @@
 							<div class="col-<?= $col; ?> my-2">
 						<?php endif ?>
 								<a href="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" class="enlarge">
-									<img class="img-fluid rounded" src="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" alt="<?= $dg['img_galeri']; ?>">
+									<img class="img-fluid rounded mx-auto" src="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" alt="<?= $dg['img_galeri']; ?>">
 								</a>
 							</div>
 					<?php endforeach ?>
