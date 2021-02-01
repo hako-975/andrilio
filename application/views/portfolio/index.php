@@ -56,7 +56,7 @@
 					<div class="col mt-2">
 						<h5 class="font-weight-normal text-truncate portfolio-title"><?= $portfolio['title']; ?></h5>
 					</div>
-					<button style="right: 0; top: 0;" type="button" class="btn position-absolute" data-toggle="modal" data-target="#editTitleModal"><i class="fas fa-fw fa-edit"></i></button>
+					<a style="right: 0; top: 0;" href="<?= base_url('portfolio/updateTitleAndFavicon'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
 				</div>
 			</div>
 		</div>
@@ -231,4 +231,3 @@
 
 
 
-<!-- Title Modal -->

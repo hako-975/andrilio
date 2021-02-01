@@ -1,3 +1,6 @@
+		<!-- close main_content -->
+		</div>
+
 		<!-- SweetAlert2 -->
 		<div class="flashdata" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
 		<div class="flashdata-success" data-flashdata="<?= $this->session->flashdata('message-success'); ?>"></div>

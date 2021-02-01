@@ -37,4 +37,22 @@ class Portfolio extends CI_Controller {
 		$this->load->view('portfolio/index', $data);
 		$this->load->view('templates/admin/footer-admin', $data);
 	}
+
+	public function updateTitleAndFavicon()
+	{
+		$this->checkLoginAdmin();
+		
+		$data['title'] 			= 'Ubah Title dan Favicon';
+		$data['portfolio'] 		= $this->pomo->getPortfolio();
+		$data['dataUser'] 		= $this->admo->getDataUser();
+		
+		$this->form_validation->set_rules('title', 'Title', 'required|trim');
+		if ($this->form_validation->run() == false) {
+		    $this->load->view('templates/admin/header-admin', $data);
+			$this->load->view('portfolio/update_title_and_favicon', $data);
+			$this->load->view('templates/admin/footer-admin', $data);
+		} else {
+		    $this->pomo->updateTitleAndFavicon();
+		}
+	}
 }

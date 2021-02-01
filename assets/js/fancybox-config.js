@@ -33,9 +33,17 @@ function enlargePhoto(a) {
 }
 
 $("#img_galeri").change(function(){
-   readPhoto(this);
+  readPhoto(this);
 });
 
 $("#img_galeri").change(function(){
-   enlargePhoto(this);
+  enlargePhoto(this);
+});
+
+$("#img_favicon").change(function(){
+  readPhoto(this);
+});
+
+$("#img_favicon").change(function(){
+  enlargePhoto(this);
 });

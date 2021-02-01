@@ -7,6 +7,7 @@ class Auth extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Auth_model', 'aumo');
+		$this->load->model('Portfolio_model', 'pomo');
 		$this->load->model('Log_model', 'lomo');
 	}
 
@@ -22,6 +23,7 @@ class Auth extends CI_Controller {
 		$this->checkLogin();
 
 		$data['title'] = 'Masuk';
+		$data['portfolio'] = $this->pomo->getPortfolio();
 		$this->form_validation->set_rules('username', 'Username', 'required|trim');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim');
 		if ($this->form_validation->run() == false) {
@@ -170,6 +172,7 @@ class Auth extends CI_Controller {
 		}
 		// data
 		$data['title'] = 'Lupa Password';
+		$data['portfolio'] = $this->pomo->getPortfolio();
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		if ($this->form_validation->run() == false) {
 			$this->load->view('templates/landing/header-landing', $data);
@@ -226,6 +229,8 @@ class Auth extends CI_Controller {
 		}
 		// data
 		$data['title'] = 'Ganti Password';
+		$data['portfolio'] = $this->pomo->getPortfolio();
+
 
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[6]|matches[password_verify]', [
 			'matches' => 'Password tidak sama dengan password verifikasi',
