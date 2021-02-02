@@ -157,22 +157,29 @@
 							<hr class="text-center">
 						</div>
 					</div>
-					<div class="row my-3 mx-2">
-						<?php if ($galeri[0]['kolom_galeri'] == 0): ?>
-							<div class="card-columns">
-						<?php endif ?>
-							<?php foreach ($galeri as $dg): ?>
-								<?php if ($dg['kolom_galeri'] == 0): ?>
-									<div class="card m-3">
-								<?php else: ?>
-									<?php $col = 12 / $dg['kolom_galeri']; ?>
-									<div class="col-<?= $col; ?> my-2">
+					<div class="row">
+						<div class="col border border-dark">
+							<div class="row m-3">
+								<?php if ($galeri[0]['kolom_galeri'] == 0): ?>
+									<div class="card-columns">
 								<?php endif ?>
-										<a href="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" class="enlarge">
-											<img class="img-fluid rounded" src="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" alt="<?= $dg['img_galeri']; ?>">
-										</a>
+									<?php foreach ($galeri as $dg): ?>
+										<?php if ($dg['kolom_galeri'] == 0): ?>
+											<div class="card m-3">
+										<?php else: ?>
+											<?php $col = 12 / $dg['kolom_galeri']; ?>
+											<div class="col-<?= $col; ?> my-2">
+										<?php endif ?>
+												<a href="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" class="enlarge">
+													<img class="img-fluid rounded mx-auto" src="<?= base_url('assets/img/img_galeri/') . $dg['img_galeri']; ?>" alt="<?= $dg['img_galeri']; ?>">
+												</a>
+											</div>
+									<?php endforeach ?>
+								<?php if ($galeri[0]['kolom_galeri'] == 0): ?>
 									</div>
-							<?php endforeach ?>
+								<?php endif ?>
+							</div>
+							<a style="right: -5px; top: 0;" href="<?= base_url('portfolio/updateGaleri'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
 						</div>
 					</div>
 				</div>
@@ -188,14 +195,19 @@
 					</div>
 					<div class="row my-3">
 						<div class="col-lg-4 my-2">
-							<div class="card">
-							  <div class="card-header bg-red-brown text-pink">
-							    <?= $kontak['judul_kontak']; ?>
-							  </div>
-							  <ul class="list-group list-group-flush text-red-brown">
-							    <li class="list-group-item">No. Telepon : <?= $kontak['no_telepon_kontak']; ?></li>
-							    <li class="list-group-item">Alamat : <?= $kontak['alamat_kontak']; ?></li>
-							  </ul>
+							<div class="row my-1 justify-content-center">
+								<div class="col border border-dark rounded">
+									<div class="card">
+									  <div class="card-header bg-red-brown text-pink">
+									    <?= $kontak['judul_kontak']; ?>
+									  </div>
+									  <ul class="list-group list-group-flush text-red-brown">
+									    <li class="list-group-item">No. Telepon : <?= $kontak['no_telepon_kontak']; ?></li>
+									    <li class="list-group-item">Alamat : <?= $kontak['alamat_kontak']; ?></li>
+									  </ul>
+									</div>
+									<a style="right: -5px; top: 0;" href="<?= base_url('portfolio/updateKontak'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
+								</div>
 							</div>
 						</div>
 						<div class="col-lg my-2 bg-red-brown p-4 mx-3 rounded text-pink">

@@ -146,6 +146,46 @@ class Portfolio extends CI_Controller {
 		}
 	}
 
+	public function updateGaleri()
+	{
+		$this->checkLoginAdmin();
+		
+		$data['title'] 			= 'Ubah Tata Letak Galeri';
+		$data['portfolio'] 		= $this->pomo->getPortfolio();
+		$data['galeri'] 		= $this->gamo->getGaleri()[0];
+		$data['dataUser'] 		= $this->admo->getDataUser();
+		
+		$this->form_validation->set_rules('kolom_galeri', 'Kolom Galeri', 'required|trim');
+		if ($this->form_validation->run() == false) {
+		    $this->load->view('templates/admin/header-admin', $data);
+			$this->load->view('portfolio/update_galeri', $data);
+			$this->load->view('templates/admin/footer-admin', $data);
+		} else {
+		    $this->pomo->updateGaleri();
+		}
+	}
+
+	public function updateKontak()
+	{
+		$this->checkLoginAdmin();
+		
+		$data['title'] 			= 'Ubah Kontak';
+		$data['portfolio'] 		= $this->pomo->getPortfolio();
+		$data['kontak'] 		= $this->komo->getKontak();
+		$data['dataUser'] 		= $this->admo->getDataUser();
+		
+		$this->form_validation->set_rules('judul_kontak', 'Kontak', 'required|trim');
+		$this->form_validation->set_rules('no_telepon_kontak', 'No. Telepon Kontak', 'required|trim');
+		$this->form_validation->set_rules('alamat_kontak', 'Alamat Kontak', 'required|trim');
+		if ($this->form_validation->run() == false) {
+		    $this->load->view('templates/admin/header-admin', $data);
+			$this->load->view('portfolio/update_kontak', $data);
+			$this->load->view('templates/admin/footer-admin', $data);
+		} else {
+		    $this->pomo->updateKontak();
+		}
+	}
+
 	public function updateFooter()
 	{
 		$this->checkLoginAdmin();

@@ -178,6 +178,37 @@ class Portfolio_model extends CI_Model
 		redirect('portfolio/index');
 	}
 
+	public function updateGaleri()
+	{
+		$data = [
+			'kolom_galeri' => $this->input->post('kolom_galeri', true)
+		];
+
+		$this->db->update('galeri', $data);
+		$this->lomo->insertLog('berhasil mengubah Tata Letak Galeri <b>' . $data['kolom_galeri'] . '</b>');
+		$this->session->set_flashdata('message-success', 'Tata Letak Galeri berhasil diubah');
+		redirect('portfolio/index');
+	}
+
+	public function updateKontak()
+	{
+		$this->load->model('Kontak_model', 'komo');
+		$id = $this->komo->getKontak()['id_kontak'];
+
+		$data = [
+			'judul_kontak' => $this->input->post('judul_kontak', true),
+			'no_telepon_kontak' => $this->input->post('no_telepon_kontak', true),
+			'alamat_kontak' => $this->input->post('alamat_kontak', true)
+		];
+
+		$kontak = implode(', ', $data);
+
+		$this->db->update('kontak', $data, ['id_kontak' => $id]);
+		$this->lomo->insertLog('berhasil mengubah kontak <b>' . $kontak . '</b>');
+		$this->session->set_flashdata('message-success', 'kontak berhasil diubah');
+		redirect('portfolio/index');
+	}
+
 	public function updateFooter()
 	{
 		$id = $this->getPortfolio()['id_portfolio'];

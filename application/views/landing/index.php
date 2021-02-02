@@ -110,7 +110,9 @@
 								</a>
 							</div>
 					<?php endforeach ?>
-				</div>
+				<?php if ($galeri[0]['kolom_galeri'] == 0): ?>
+					</div>
+				<?php endif ?>
 			</div>
 		</div>
 	</section>
