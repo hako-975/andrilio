@@ -47,3 +47,27 @@ $("#img_favicon").change(function(){
 $("#img_favicon").change(function(){
   enlargePhoto(this);
 });
+
+$("#img_navbar_brand").change(function(){
+  readPhoto(this);
+});
+
+$("#img_navbar_brand").change(function(){
+  enlargePhoto(this);
+});
+
+$("#img_profile").change(function(){
+  readPhoto(this);
+});
+
+$("#img_profile").change(function(){
+  enlargePhoto(this);
+});
+
+$("#img_jumbotron").change(function(){
+  readPhoto(this);
+});
+
+$("#img_jumbotron").change(function(){
+  enlargePhoto(this);
+});

@@ -1,48 +1,48 @@
-<!-- script loader -->
-<script>
-    function fadeOut(el){
-        el.style.opacity = 1;
-
-        (function fade() {
-            if ((el.style.opacity -= .1) < 0) {
-                el.style.display = "none";
-            } else {
-                requestAnimationFrame(fade);
-            }
-        })();
-    }
-
-    function fadeIn(el, display){
-        el.style.opacity = 0;
-        el.style.display = display || "block";
-
-        (function fade() {
-            var val = parseFloat(el.style.opacity);
-            if (!((val += .1) > 1)) {
-                el.style.opacity = val;
-                requestAnimationFrame(fade);
-            }
-        })();
-    }
-
-    document.onreadystatechange = function () {
-        var state = document.readyState;
-        if (state == 'interactive') {
-            document.getElementById("main_content").style.display = "none";
-        } else if (state == 'complete') {
-            document.getElementById('interactive');
-            var loader = document.getElementById('loader-wrapper');
-            var main_content = document.getElementById('main_content');
-            fadeOut(loader);
-            fadeIn(main_content);
-        }
-    }
-</script>
-<!-- ./script loader -->
-
 <!doctype html>
 <html lang="en" id="page-top">
     <head>
+        <!-- script loader -->
+        <script>
+            function fadeOut(el){
+                el.style.opacity = 1;
+
+                (function fade() {
+                    if ((el.style.opacity -= .1) < 0) {
+                        el.style.display = "none";
+                    } else {
+                        requestAnimationFrame(fade);
+                    }
+                })();
+            }
+
+            function fadeIn(el, display){
+                el.style.opacity = 0;
+                el.style.display = display || "block";
+
+                (function fade() {
+                    var val = parseFloat(el.style.opacity);
+                    if (!((val += .1) > 1)) {
+                        el.style.opacity = val;
+                        requestAnimationFrame(fade);
+                    }
+                })();
+            }
+
+            document.onreadystatechange = function () {
+                var state = document.readyState;
+                if (state == 'interactive') {
+                    document.getElementById("main_content").style.display = "none";
+                } else if (state == 'complete') {
+                    document.getElementById('interactive');
+                    var loader = document.getElementById('loader-wrapper');
+                    var main_content = document.getElementById('main_content');
+                    fadeOut(loader);
+                    fadeIn(main_content);
+                }
+            }
+        </script>
+        <!-- ./script loader -->
+        
         <style>
             #loader-wrapper {
               width: 100%;

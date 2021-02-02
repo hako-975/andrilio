@@ -38,7 +38,7 @@ class Portfolio extends CI_Controller {
 		$this->load->view('templates/admin/footer-admin', $data);
 	}
 
-	public function updateTitleAndFavicon()
+	public function updateTitleAndImgFavicon()
 	{
 		$this->checkLoginAdmin();
 		
@@ -49,10 +49,118 @@ class Portfolio extends CI_Controller {
 		$this->form_validation->set_rules('title', 'Title', 'required|trim');
 		if ($this->form_validation->run() == false) {
 		    $this->load->view('templates/admin/header-admin', $data);
-			$this->load->view('portfolio/update_title_and_favicon', $data);
+			$this->load->view('portfolio/update_title_and_img_favicon', $data);
 			$this->load->view('templates/admin/footer-admin', $data);
 		} else {
-		    $this->pomo->updateTitleAndFavicon();
+		    $this->pomo->updateTitleAndImgFavicon();
+		}
+	}
+
+	public function updateImgNavbarBrand()
+	{
+		$this->checkLoginAdmin();
+		
+		$data['title'] 			= 'Ubah Navbar Brand';
+		$data['portfolio'] 		= $this->pomo->getPortfolio();
+		$data['dataUser'] 		= $this->admo->getDataUser();
+		
+		$this->form_validation->set_rules('dump_validation', 'Dump Validation', 'required|trim');
+		if ($this->form_validation->run() == false) {
+		    $this->load->view('templates/admin/header-admin', $data);
+			$this->load->view('portfolio/update_img_navbar_brand', $data);
+			$this->load->view('templates/admin/footer-admin', $data);
+		} else {
+		    $this->pomo->updateImgNavbarBrand();
+		}
+	}
+
+	public function updateImgProfile()
+	{
+		$this->checkLoginAdmin();
+		
+		$data['title'] 			= 'Ubah Foto Profil';
+		$data['portfolio'] 		= $this->pomo->getPortfolio();
+		$data['dataUser'] 		= $this->admo->getDataUser();
+		
+		$this->form_validation->set_rules('dump_validation', 'Dump Validation', 'required|trim');
+		if ($this->form_validation->run() == false) {
+		    $this->load->view('templates/admin/header-admin', $data);
+			$this->load->view('portfolio/update_img_profile', $data);
+			$this->load->view('templates/admin/footer-admin', $data);
+		} else {
+		    $this->pomo->updateImgProfile();
+		}
+	}
+
+	public function updateImgJumbotron()
+	{
+		$this->checkLoginAdmin();
+		
+		$data['title'] 			= 'Ubah Background Jumbotron';
+		$data['portfolio'] 		= $this->pomo->getPortfolio();
+		$data['dataUser'] 		= $this->admo->getDataUser();
+		
+		$this->form_validation->set_rules('dump_validation', 'Dump Validation', 'required|trim');
+		if ($this->form_validation->run() == false) {
+		    $this->load->view('templates/admin/header-admin', $data);
+			$this->load->view('portfolio/update_img_jumbotron', $data);
+			$this->load->view('templates/admin/footer-admin', $data);
+		} else {
+		    $this->pomo->updateImgJumbotron();
+		}
+	}
+
+	public function updateHeading1()
+	{
+		$this->checkLoginAdmin();
+		
+		$data['title'] 			= 'Ubah Heading 1';
+		$data['portfolio'] 		= $this->pomo->getPortfolio();
+		$data['dataUser'] 		= $this->admo->getDataUser();
+		
+		$this->form_validation->set_rules('heading_1', 'Heading 1', 'required|trim');
+		if ($this->form_validation->run() == false) {
+		    $this->load->view('templates/admin/header-admin', $data);
+			$this->load->view('portfolio/update_heading_1', $data);
+			$this->load->view('templates/admin/footer-admin', $data);
+		} else {
+		    $this->pomo->updateHeading1();
+		}
+	}
+
+	public function updateHeading2()
+	{
+		$this->checkLoginAdmin();
+		
+		$data['title'] 			= 'Ubah Heading 2';
+		$data['portfolio'] 		= $this->pomo->getPortfolio();
+		$data['dataUser'] 		= $this->admo->getDataUser();
+		
+		$this->form_validation->set_rules('heading_2', 'Heading 2', 'required|trim');
+		if ($this->form_validation->run() == false) {
+		    $this->load->view('templates/admin/header-admin', $data);
+			$this->load->view('portfolio/update_heading_2', $data);
+			$this->load->view('templates/admin/footer-admin', $data);
+		} else {
+		    $this->pomo->updateHeading2();
+		}
+	}
+
+	public function updateFooter()
+	{
+		$this->checkLoginAdmin();
+		
+		$data['title'] 			= 'Ubah Footer';
+		$data['portfolio'] 		= $this->pomo->getPortfolio();
+		$data['dataUser'] 		= $this->admo->getDataUser();
+		
+		$this->form_validation->set_rules('footer', 'Footer', 'required|trim');
+		if ($this->form_validation->run() == false) {
+		    $this->load->view('templates/admin/header-admin', $data);
+			$this->load->view('portfolio/update_footer', $data);
+			$this->load->view('templates/admin/footer-admin', $data);
+		} else {
+		    $this->pomo->updateFooter();
 		}
 	}
 }

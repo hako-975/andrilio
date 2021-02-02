@@ -10,7 +10,7 @@
     
     <style>
 		.jumbotron {
-			background-image: url(<?= base_url('assets/img/img_properties/') . $portfolio['img_jumbotron']; ?>);
+			background-image: url(<?= base_url('assets/img/img_jumbotron/') . $portfolio['img_jumbotron']; ?>);
 			background-size: cover;
 			background-repeat: no-repeat;
 		}
@@ -56,27 +56,37 @@
 					<div class="col mt-2">
 						<h5 class="font-weight-normal text-truncate portfolio-title"><?= $portfolio['title']; ?></h5>
 					</div>
-					<a style="right: 0; top: 0;" href="<?= base_url('portfolio/updateTitleAndFavicon'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
+					<a style="right: 0; top: 0;" href="<?= base_url('portfolio/updateTitleAndImgFavicon'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
 				</div>
 			</div>
 		</div>
 		<!-- Fixed navbar -->
 		<nav class="navbar navbar-expand-md navbar-dark bg-pink sticky-top mb-n4" style="box-shadow: none;">
 			<div class="container">
-				<a class="navbar-brand" href="<?= base_url(); ?>"><img class="img-fluid img-w-150 rounded my-auto" src="<?= base_url('assets/img/img_properties/') . $portfolio['img_navbar_brand']; ?>" alt="img-navbar-brand"></a>
+				<div class="row mx-lg-2">
+					<div class="col border border-dark rounded">
+						<a class="navbar-brand" href="<?= base_url(); ?>"><img class="img-fluid img-w-150 rounded my-auto" src="<?= base_url('assets/img/img_properties/') . $portfolio['img_navbar_brand']; ?>" alt="img-navbar-brand"></a>
+						<a style="right: -5px; top: 0;" href="<?= base_url('portfolio/updateImgNavbarBrand'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
+					</div>
+				</div>
 				<button class="navbar-toggler bg-red-brown" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
-					<ul class="navbar-nav mr-auto">
+					<ul class="navbar-nav mr-auto my-2">
 						<li class="nav-item">
 							<a class="text-red-brown nav-link page-scroll mx-2" href="#page-top">Beranda</a>
 						</li>
-						<?php foreach ($section as $ds): ?>
-							<li class="nav-item">
-								<a class="text-red-brown nav-link page-scroll mx-2" href="#<?= $ds['nama_section']; ?>"><?= ucwords(strtolower($ds['nama_section'])); ?></a>
-							</li>
-						<?php endforeach ?>
+						<div class="row mx-lg-2">
+							<div class="col border border-dark rounded">
+								<?php foreach ($section as $ds): ?>
+									<li class="nav-item lg-inline-block-sm-block">
+										<a class="lg-inline-block-sm-block text-red-brown nav-link page-scroll mx-2" href="#<?= $ds['nama_section']; ?>"><?= ucwords(strtolower($ds['nama_section'])); ?></a>
+									</li>
+								<?php endforeach ?>
+								<a style="right: -10px; top: 0;" href="<?= base_url('section/index'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
+							</div>
+						</div>
 						<li class="nav-item">
 							<a class="text-red-brown nav-link page-scroll mx-2" href="#galeri">Galeri</a>
 						</li>
@@ -90,15 +100,36 @@
 
 		<!-- Begin page content -->
 		<main role="main" class="flex-shrink-0 mt-4">
-			<div class="jumbotron jumbotron-fluid mt-4 mb-n1">
-				<div class="container text-center">
-					<a href="<?= base_url('assets/img/img_profil/') . $portfolio['img_profile']; ?>" class="enlarge">
-						<img class="img-fluid rounded-circle img-300" src="<?= base_url('assets/img/img_profil/') . $portfolio['img_profile']; ?>" alt="img-profile">
-					</a>
-					<h1 class="heading_1 text-red-brown mt-3"><?= $portfolio['heading_1']; ?></h1>
-					<h3 class="heading_2 text-red-brown"><?= $portfolio['heading_2']; ?></h3>
+			<div class="row">
+				<div class="col border border-dark rounded">
+					<div class="jumbotron jumbotron-fluid">
+						<div class="container text-center">
+							<div class="row justify-content-center">
+								<div class="col-lg-4 col-10 border border-dark rounded">
+									<a href="<?= base_url('assets/img/img_profil/') . $portfolio['img_profile']; ?>" class="enlarge">
+										<img class="img-fluid rounded-circle img-300" src="<?= base_url('assets/img/img_profil/') . $portfolio['img_profile']; ?>" alt="img-profile">
+									</a>
+									<a style="right: 0px; top: 0;" href="<?= base_url('portfolio/updateImgProfile'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
+								</div>
+							</div>
+							<div class="row my-1 justify-content-center">
+								<div class="col-lg-4 col-10 border border-dark rounded">
+									<h1 class="heading_1 text-red-brown mt-3"><?= $portfolio['heading_1']; ?></h1>
+									<a style="right: 0px; top: 0;" href="<?= base_url('portfolio/updateHeading1'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
+								</div>
+							</div>
+							<div class="row my-1 justify-content-center">
+								<div class="col-lg-4 col-10 border border-dark rounded">
+									<h3 class="heading_2 text-red-brown"><?= $portfolio['heading_2']; ?></h3>
+									<a style="right: 0px; top: 0;" href="<?= base_url('portfolio/updateHeading2'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a style="right: 0px; top: 0;" href="<?= base_url('portfolio/updateImgJumbotron'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
 				</div>
 			</div>
+
 
 			<?php foreach ($section as $ds): ?>
 				<section class="<?= $ds['nama_section']; ?> striped" id="<?= $ds['nama_section']; ?>">
@@ -204,7 +235,13 @@
 			<div class="container">
 				<div class="row my-3">
 					<div class="col-lg footer-copyright">
-						<h5 class="text-pink"><?= $portfolio['footer']; ?></h5>
+						<div class="row">
+							<div class="col border border-dark">
+								<h5 class="text-pink"><?= $portfolio['footer']; ?></h5>
+								<a style="right: -5px; top: 0;" href="<?= base_url('portfolio/updateFooter'); ?>" class="btn position-absolute"><i class="fas fa-fw fa-edit"></i></a>
+
+							</div>
+						</div>
 						<a class="text-decoration-none text-pink" href="<?= base_url('auth'); ?>"><i class="fas fa-fw fa-laptop-code"></i> Developer Room</a>
 					</div>
 					<div class="col-lg footer-sosial-media">

@@ -22,7 +22,7 @@
 			</div>
 			<div class="row my-2">
 				<div class="col-lg-6">
-					<form method="post" action="<?= base_url('portfolio/updateTitleAndFavicon/'); ?>" enctype="multipart/form-data">
+					<form method="post" action="<?= base_url('portfolio/updateTitleAndImgFavicon/'); ?>" enctype="multipart/form-data">
 						<div class="form-group">
 							<a href="<?= base_url('assets/img/img_favicon/') . $portfolio['img_favicon']; ?>" class="enlarge" id="check_enlarge_photo">
 								<img class="img-fluid img-w-150" id="check_photo" src="<?= base_url('assets/img/img_favicon/') . $portfolio['img_favicon']; ?>" alt="<?= $portfolio['img_favicon']; ?>">
@@ -37,7 +37,7 @@
 							<input type="text" id="title" class="form-control <?= (form_error('title')) ? 'is-invalid' : ''; ?>" name="title" required value="<?= (set_value('title')) ? set_value('title') : $portfolio['title']; ?>">
 						</div>
 					  	<div class="form-group">
-					  		<button type="submit" name="btnInsertTitleAndFavicon" class="btn btn-red-brown"><i class="fas fa-fw fa-save"></i> Simpan</button>
+					  		<button type="submit" name="btnUpdateTitleAndImgFavicon" class="btn btn-red-brown"><i class="fas fa-fw fa-save"></i> Simpan</button>
 					  	</div>
 					</form>
 				</div>

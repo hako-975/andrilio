@@ -1,6 +1,6 @@
 <style>
 	.jumbotron {
-		background-image: url(<?= base_url('assets/img/img_properties/') . $portfolio['img_jumbotron']; ?>);
+		background-image: url(<?= base_url('assets/img/img_jumbotron/') . $portfolio['img_jumbotron']; ?>);
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
@@ -57,7 +57,7 @@
 </header>
 
 <!-- Begin page content -->
-<main role="main" class="flex-shrink-0 mt-4">
+<main role="main" class="flex-shrink-0 mt-5">
 	<div class="jumbotron jumbotron-fluid mt-4 mb-n1">
 		<div class="container text-center">
 			<a href="<?= base_url('assets/img/img_profil/') . $portfolio['img_profile']; ?>" class="enlarge">

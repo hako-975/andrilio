@@ -285,8 +285,19 @@ table > thead > tr > th, table > tbody > tr > td  {
   background-color: #CC8177!important;
   color: #FFF5F5!important;
 }
-
 /*------------ pagination color ------------*/
+
+/*------------ lg-inline-block-sm-block ------------*/
+.lg-inline-block-sm-block {
+  display: block !important;
+}
+
+@media (min-width: 850px) {
+  .lg-inline-block-sm-block {
+    display: inline-block !important;
+  }
+}
+/*------------ lg-inline-block-sm-block ------------*/
 
 
 }

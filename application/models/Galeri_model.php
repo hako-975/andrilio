@@ -99,6 +99,8 @@ class Galeri_model extends CI_Model
 			} else {
 				echo $this->upload->display_errors();
 			}
+		} else {
+			$this->db->set('img_galeri', $old_galeri);
 		}
 		
 		$this->db->where('id_galeri', $id);
