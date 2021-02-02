@@ -17,7 +17,7 @@
 			</div>
 			<div class="row my-2">
 				<div class="col-lg">
-					<h3><i class="fas fa-fw fa-file-alt"></i> Ubah Navbar Brand</h3>
+					<h3><i class="fas fa-fw fa-file-alt"></i> Ubah Background Jumbotron</h3>
 				</div>
 			</div>
 			<div class="row my-2">
